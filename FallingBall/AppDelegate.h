@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "GameViewController.h"
 #import "GameScene.h"
-#import "Appirater.h"
 
 @class GameScene;
 @class GameViewController;

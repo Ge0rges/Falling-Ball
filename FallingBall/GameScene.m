@@ -8,7 +8,7 @@
 
 #import "GameScene.h"
 
-#define kBallRadius 140.0
+#define kBallRadius 150.0
 #define IS_OS_8_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 
 extern int score;// Extern so we can access it in other scenes

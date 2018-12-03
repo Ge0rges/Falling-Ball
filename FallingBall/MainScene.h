@@ -10,7 +10,6 @@
 #import <CoreImage/CoreImage.h>
 #import "GameScene.h"
 #import "GameViewController.h"
-#import "Appirater.h"
 
 @class GameViewController;
 @class GameScene;

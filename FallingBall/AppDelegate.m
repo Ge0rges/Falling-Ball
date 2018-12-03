@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 
+#import <StoreKit/StoreKit.h>
+
 @interface AppDelegate ()
 
 void exceptionHandler(NSException * exception);
@@ -32,20 +34,11 @@ void exceptionHandler(NSException * exception);
     
     // Not the first launch
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"notFirstLaunch"];
+ 
+  } else {
+    // Asking for reviews
+	[SKStoreReviewController requestReview];
   }
-  
-  // Asking for reviews
-  [Appirater setAppId:@"888456363"];
-  [Appirater setDaysUntilPrompt:3];
-  [Appirater setUsesUntilPrompt:7];
-  [Appirater setSignificantEventsUntilPrompt:2];
-  [Appirater setTimeBeforeReminding:2];
-  [Appirater setDebug:NO];
-  [Appirater setCustomAlertMessage:@"If you enjoy Falling-Ball please take a short moment to rate it. It helps us a lot and keeps the updates coming! Thanks a lot for your support."];
-  [Appirater setCustomAlertRateButtonTitle:@"Sure!"];
-  [Appirater setCustomAlertRateLaterButtonTitle:@"Maybe later"];
-  [Appirater appLaunched:YES];
-  
   // Disable the idleTimer
   [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
   
@@ -72,7 +65,6 @@ void exceptionHandler(NSException * exception);
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
   // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-  [Appirater appEnteredForeground:YES];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {

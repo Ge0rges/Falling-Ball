@@ -56,10 +56,7 @@ int score;
         // Save it
         [[NSUserDefaults standardUserDefaults] setInteger:score forKey:@"highscore"];
         highscore = score;
-        
-        // Significant event
-        [Appirater userDidSignificantEvent:YES];
-        
+        		  
         // Set the score label
         scoreLabel.text = [NSString stringWithFormat:@"New Top Score: %i Hits!", highscore];
         
